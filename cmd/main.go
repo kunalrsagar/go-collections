@@ -1,13 +1,36 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/kunalrsagar/go/collections"
 	"log"
 )
 
 func main() {
-	// queue()
+	bst()
+}
+
+func bst() {
+	bst := collections.BinarySearchTree[int]{}
+	bst.Insert(10)
+	bst.Insert(19)
+	bst.Insert(3)
+	bst.Insert(8)
+
+	fmt.Println("19", bst.Lookup(19))
+	fmt.Println("6", bst.Lookup(6))
+	fmt.Println("10", bst.Lookup(10))
+	fmt.Println("55", bst.Lookup(55))
+	fmt.Println("3", bst.Lookup(3))
+	fmt.Println("8", bst.Lookup(8))
+
+	u, err := json.Marshal(bst)
+	if err != nil {
+		log.Fatal(err.Error())
+	} else {
+		fmt.Println(string(u))
+	}
 }
 
 func queue() {

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/kunalrsagar/collections"
+	"github.com/kunalrsagar/go/collections"
 	"log"
 )
 

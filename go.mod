@@ -1,3 +1,3 @@
-module github.com/kunalrsagar/collections
+module github.com/kunalrsagar/go/collections
 
 go 1.17

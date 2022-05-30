@@ -42,24 +42,18 @@ func (bst *BinarySearchTree[M]) Insert(value M) {
 
 func (bst *BinarySearchTree[M]) Lookup(value M) bool {
 	node := bst.Root
-
-	for true {
-		if node != nil {
-			if value > node.Value {
-				// check on right node
-				node = node.Right
-				continue
-			} else if value < node.Value {
-				// check on left node
-				node = node.Left
-				continue
-			} else {
-				return true
-			}
-		} else {
-			return false
+	for node != nil {
+		if value > node.Value {
+			// check on right node
+			node = node.Right
+			continue
+		} else if value < node.Value {
+			// check on left node
+			node = node.Left
+			continue
+		} else if node.Value == value {
+			return true
 		}
 	}
-
 	return false
 }
